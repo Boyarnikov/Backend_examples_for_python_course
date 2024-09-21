@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #35424a;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1s forwards; /* Fade-in animation */
+}
+
+h1, h2 {
+    margin: 10px 0;
+}
+
+.section {
+    background: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start slightly below */
+    animation: slideIn 1s forwards; /* Slide-in animation */
+}
+
+.hobby-list {
+    list-style-type: square; /* Changes bullet style */
+    padding-left: 20px; /* Adds space to left of list */
+}
+
+#about {
+    color: #333; /* Darker text for the About section */
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8em;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Fade to fully visible */
+    }
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1; /* Fade to fully visible */
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+/* Hover effect for sections */
+.section:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
