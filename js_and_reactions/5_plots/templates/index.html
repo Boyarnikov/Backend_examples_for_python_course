@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Plotly Example</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Dynamic Plotly Example</h1>
+    <div id="chart"></div>
+
+    <script type="text/javascript">
+        var graphs = {{ graphJSON | safe }};
+        Plotly.plot('chart', graphs, {});
+
+        setInterval(function() {
+            fetch('/update')
+                .then(response => response.json())
+                .then(data => {
+                    const updatedGraph = JSON.parse(data);
+                    Plotly.react('chart', updatedGraph.data, updatedGraph.layout);
+                })
+                .catch(error => console.error('Error:', error));
+        }, 1000);
+    </script>
+</body>
+</html>
