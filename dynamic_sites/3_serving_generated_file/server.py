@@ -59,7 +59,7 @@ class MyServerJinja(BaseHTTPRequestHandler):
                 self.wfile.write(file.read())
             return
         if self.path == '/':
-            template = env.get_template('index.html')
+            template = env.get_template('base.html')
             context = {
                 'title': 'My Jinja2 Web Page',
                 'heading': 'Welcome to My Jinja2 Page',
